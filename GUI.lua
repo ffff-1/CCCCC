@@ -25,9 +25,9 @@ local function INIT()
         CHAR = owner.CharacterAdded:Wait()
         CHARROOT = CHAR:WaitForChild("HumanoidRootPart",0.25)
 
-        CHARROOT = CHARROOT.CFrame * CFrame.new(0,0,-16) * CFrame.Angles(math.rad(-10),math.rad(180),0)
+        CHARROOT = CHARROOT.CFrame * CFrame.new(0,3,-16) * CFrame.Angles(math.rad(-10),math.rad(180),0)
     else
-        CHARROOT = CHARROOT.CFrame * CFrame.new(0,0,-16) * CFrame.Angles(math.rad(-10),math.rad(180),0)
+        CHARROOT = CHARROOT.CFrame * CFrame.new(0,3,-16) * CFrame.Angles(math.rad(-10),math.rad(180),0)
     end
 
     local PART = Instance.new"Part"
@@ -38,7 +38,7 @@ local function INIT()
     PART.Massless = true
     PART.Size = Vector3.new(0,0,0)
     PART.CFrame = CHARROOT
-    PART.Parent = workspace
+    PART.Parent = script
 
     local SURFACE = Instance.new"SurfaceGui"
     SURFACE.Adornee = PART
