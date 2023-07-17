@@ -104,4 +104,4 @@ FILES = nil
 
 -- ENGINE
 
-loadstring(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua", false)())
+loadstring(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua", false))()
