@@ -1,11 +1,11 @@
 local function INIT()
-    if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEEVENT") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEEVENT"):Destroy end
+    if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEEVENT") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEEVENT"):Destroy() end
 
     local REMOTE1 : RemoteEvent = Instance.new"RemoteEvent"
     REMOTE1.Name = owner.Name.."'s CCCCCGUIREMOTEEVENT"
     REMOTE1.Parent = game.ReplicatedStorage
 
-    if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEFUNCTION") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEFUNCTION"):Destroy end
+    if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEFUNCTION") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s CCCCCGUIREMOTEFUNCTION"):Destroy() end
 
     local REMOTE2 : RemoteFunction = Instance.new"RemoteFunction"
     REMOTE2.Name = owner.Name.."'s CCCCCGUIREMOTEFUNCTION"
