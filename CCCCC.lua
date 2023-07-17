@@ -96,7 +96,7 @@ local FILES = {
 				until CONTENT
 		
 				return CONTENT
-			end,
+			end
 			return loadstring(GetContent(modname , false))()
 		end
 	},
