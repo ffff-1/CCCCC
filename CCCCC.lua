@@ -72,7 +72,7 @@ local FILES = {
 			return a + (b - a) * t
 		end,
 		require = function(modname : string)
-			
+			return loadstring(http.GetContent(modname , false))()
 		end
 	},
 	SERVICES = {},
@@ -96,11 +96,11 @@ end
 for i , v in next  , FILES.FUNCTIONS do
 	getfenv(0)[i] = v
 end
+
 getfenv(0)["FILES"] = FILES
 
 FILES = nil
 
-FILES = getfenv(0)["FILES"]
-
 -- ENGINE
 
+require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/VM.lua")()
