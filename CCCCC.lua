@@ -21,7 +21,10 @@ services.http = {
 				retries += 1
 			end
 
-			local tempCONTENT = http:GetAsync(LINK , CACHE , HEADER )
+			local tempCONTENT
+			pcall(function()
+				http = http:GetAsync(LINK , CACHE , HEADER )
+			end)
 
 			if tempCONTENT then
 				CONTENT = tempCONTENT
@@ -97,7 +100,10 @@ local FILES = {
 		
 				return CONTENT
 			end
-			return loadstring(GetContent(modname , false))()
+
+			local content = loadstring(GetContent(modname , false))()
+
+			return content
 		end
 	},
 	SERVICES = {},
