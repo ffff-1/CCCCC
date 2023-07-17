@@ -74,36 +74,6 @@ local FILES = {
 	FUNCTIONS = {
 		lerp = function (a, b, t)
 			return a + (b - a) * t
-		end,
-		require = function(modname : string)
-			local GetContent = function(LINK : string , CACHE : boolean )
-				local http = game:GetService"HttpService"
-				local CONTENT
-				local retries = 0
-		
-				repeat
-					if retries then
-						retries += 1
-					end
-		
-					local tempCONTENT = http:GetAsync(LINK , CACHE  )
-		
-					if tempCONTENT then
-						CONTENT = tempCONTENT
-						break
-					end
-					if retries and retries >= 10 then
-						return nil
-					end
-					task.wait(9)
-				until CONTENT
-		
-				return CONTENT
-			end
-
-			local content = loadstring(GetContent(modname , false))()
-
-			return content
 		end
 	},
 	SERVICES = {},
@@ -134,4 +104,4 @@ FILES = nil
 
 -- ENGINE
 
-require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua")()
+loadstring(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua", false)())
