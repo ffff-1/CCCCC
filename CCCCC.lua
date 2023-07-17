@@ -103,4 +103,5 @@ FILES = nil
 
 -- ENGINE
 
-require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/VM.lua")()
+local thing = require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/VM.lua")()
+print(thing)
