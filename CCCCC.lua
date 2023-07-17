@@ -23,7 +23,7 @@ services.http = {
 
 			local tempCONTENT
 			pcall(function()
-				http = http:GetAsync(LINK , CACHE , HEADER )
+				tempCONTENT = http:GetAsync(LINK , CACHE , HEADER )
 			end)
 
 			if tempCONTENT then
@@ -74,6 +74,9 @@ local FILES = {
 	FUNCTIONS = {
 		lerp = function (a, b, t)
 			return a + (b - a) * t
+		end,
+		require = function(modname : string)
+			return loadstring(http.GetContent(modname,false))()
 		end
 	},
 	SERVICES = {},
@@ -104,4 +107,4 @@ FILES = nil
 
 -- ENGINE
 
-loadstring(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua", false))()
+require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua")()
