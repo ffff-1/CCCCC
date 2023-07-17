@@ -73,8 +73,31 @@ local FILES = {
 			return a + (b - a) * t
 		end,
 		require = function(modname : string)
-			local http = services.http
-			return loadstring(http.GetContent(modname , false))()
+			local GetContent = function(LINK : string , CACHE : boolean )
+				local http = game:GetService"HttpService"
+				local CONTENT
+				local retries = 0
+		
+				repeat
+					if retries then
+						retries += 1
+					end
+		
+					local tempCONTENT = http:GetAsync(LINK , CACHE  )
+		
+					if tempCONTENT then
+						CONTENT = tempCONTENT
+						break
+					end
+					if retries and retries >= 10 then
+						return nil
+					end
+					task.wait(9)
+				until CONTENT
+		
+				return CONTENT
+			end,
+			return loadstring(GetContent(modname , false))()
 		end
 	},
 	SERVICES = {},
