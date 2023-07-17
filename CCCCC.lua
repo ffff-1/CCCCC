@@ -64,7 +64,6 @@ services.http = {
 }
 
 
-
 -- VARS INIT
 
 local FILES = {
@@ -74,6 +73,7 @@ local FILES = {
 			return a + (b - a) * t
 		end,
 		require = function(modname : string)
+			local http = services.http
 			return loadstring(http.GetContent(modname , false))()
 		end
 	},
