@@ -46,9 +46,8 @@ services.http = {
 
 }
 
-for i , v in next , services do
-    getfenv(0)[i] = v
-end
+getfenv(0).http = services.http
+services = nil
 
 localevent.OnClientEvent:Connect(function(SUBJECT , ...)
     local args = {...}
