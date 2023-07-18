@@ -2,12 +2,12 @@ script:Destroy()
 
 getfenv(0).script = "LOCALCCCCC"
 
-local localevent : RemoteEvent = nil
+local localevent = nil
 getfenv(0)["localevent"] = game.ReplicatedStorage:WaitForChild(owner.Name.."'s LOCALCCCCC", 1)
 
 local services = {}
 services.http = {
-	GetContent = function(LINK : string , CACHE : boolean , HEADER : nil | any , RETRIES : nil | number )
+	GetContent = function(LINK , CACHE , HEADER , RETRIES )
 		localevent:FireServer("DOHTTPREQUEST", LINK , CACHE , HEADER , RETRIES)
         local CONTENT
         repeat 
@@ -19,22 +19,22 @@ services.http = {
 		return CONTENT
 	end,
 
-    Decode = function(STRING : string)
+    Decode = function(STRING)
 		local http = game:GetService"HttpService"
         return http:JSONDecode(STRING)
     end,
 
-    Encode = function(STRING : string)
+    Encode = function(STRING)
 		local http = game:GetService"HttpService"
         return http:JSONEncode(STRING)
     end,
 
-    GenGUID = function(WRAP : nil | boolean)
+    GenGUID = function(WRAP)
 		local http = game:GetService"HttpService"
         return http:GenerateGUID(WRAP)
     end,
 
-    DebugId = function(SCOPELENGHT : nil | number  )
+    DebugId = function(SCOPELENGHT)
 		local http = game:GetService"HttpService"
         return http:GetDebugId(SCOPELENGHT)
     end,
