@@ -135,8 +135,8 @@ LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
 	end
 end)
 
-NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
-
 task.wait()
+
+NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
 
 require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua")()

@@ -2,8 +2,9 @@ script:Destroy()
 
 getfenv(0).script = "LOCALCCCCC"
 
-local localevent = nil
-getfenv(0)["localevent"] = game.ReplicatedStorage:WaitForChild(owner.Name.."'s LOCALCCCCC", 1)
+local LOCALEVENT = game.ReplicatedStorage:WaitForChild(owner.Name.."'s LOCALCCCCC", 1)
+getfenv(0)["localevent"] = LOCALEVENT
+LOCALEVENT = nil
 
 local services = {}
 services.http = {
@@ -18,31 +19,6 @@ services.http = {
         until CONTENT
 		return CONTENT
 	end,
-
-    Decode = function(STRING)
-		local http = game:GetService"HttpService"
-        return http:JSONDecode(STRING)
-    end,
-
-    Encode = function(STRING)
-		local http = game:GetService"HttpService"
-        return http:JSONEncode(STRING)
-    end,
-
-    GenGUID = function(WRAP)
-		local http = game:GetService"HttpService"
-        return http:GenerateGUID(WRAP)
-    end,
-
-    DebugId = function(SCOPELENGHT)
-		local http = game:GetService"HttpService"
-        return http:GetDebugId(SCOPELENGHT)
-    end,
-
-	ReqAsync = function()
-		local http = game:GetService"HttpService"
-		return http:RequestAsync()
-	end
 
 }
 
