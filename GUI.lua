@@ -68,7 +68,7 @@ local function INIT()
     TEXT.Parent = SURFACE
 
     runlocal([[
-        local SURFACE = workspace:FindFirstChild(owner.Name.."'s CCCCC"):FindFirstChild("CCCCCGUI"):FindFirstAncestorOfClass("SurfaceGuiBase")
+        local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstAncestorOfClass("SurfaceGui")
 
         local TEXTBOX = Instance.new"TextBox"
         TEXTBOX.BackgroundColor3 = Color3.new(0.164705, 0.215686, 0.101960)
@@ -80,6 +80,7 @@ local function INIT()
         TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
         TEXTBOX.TextScaled = true
         TEXTBOX.Text = ""
+        TEXTBOX.PlaceholderText = "Write Command Here"
         TEXTBOX.ZIndex = 3
         TEXTBOX.TextXAlignment = Enum.TextXAlignment.Left
         TEXTBOX.TextDirection = Enum.TextDirection.Auto
