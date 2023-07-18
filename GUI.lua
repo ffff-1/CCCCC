@@ -68,7 +68,7 @@ local function INIT()
     TEXT.Parent = SURFACE
 
     runlocal([[
-        local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstAncestorOfClass("SurfaceGui")
+        local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstChildOfClass("SurfaceGui")
 
         local TEXTBOX = Instance.new"TextBox"
         TEXTBOX.BackgroundColor3 = Color3.new(0.164705, 0.215686, 0.101960)
