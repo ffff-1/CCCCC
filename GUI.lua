@@ -63,6 +63,7 @@ local function INIT()
     TEXT.TextXAlignment = Enum.TextXAlignment.Left
     TEXT.TextDirection =Enum.TextDirection.Auto
     TEXT.Text = "CCCCC:<}-> "
+    TEXT.Parent = SURFACE
 
     local divider = 2
     local smoother = 1
