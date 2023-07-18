@@ -134,7 +134,7 @@ LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
 		local func = loadstring(ARGS[1])
 		local sus , e = pcall(func)
 		if not sus then
-			error(e)
+			error(e,0)
 		end
 	end
 end)
