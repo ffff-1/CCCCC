@@ -1,4 +1,12 @@
 -- CCCCC by fbd_1
+script:Destroy()
+
+if workspace:FindFirstChild("CCCCC") then workspace:FindFirstChild("CCCCC"):Destroy() end
+
+local mod = Instance.new("ModuleScript",workspace)
+mod.Name = "CCCCC"
+
+getfenv(0).script = mod
 
 -- SERVICES
 
