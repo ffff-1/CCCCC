@@ -78,7 +78,7 @@ local function INIT()
         TEXTBOX.BorderSizePixel = 0
         TEXTBOX.Size = UDim2.fromScale(1,0.03)
         TEXTBOX.AnchorPoint = Vector2.new(0,1)
-        TEXTBOX.Position = UDim2.fromScale(0,1.06)
+        TEXTBOX.Position = UDim2.fromScale(0,1.035)
         TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
         TEXTBOX.TextScaled = true
         TEXTBOX.TextXAlignment = Enum.TextXAlignment.Left
