@@ -66,6 +66,7 @@ local function INIT()
     TEXT.TextDirection =Enum.TextDirection.Auto
     TEXT.Text = "CCCCC :<}-> "
     TEXT.Parent = SURFACE
+    TEXT.ClipsDescendants = false
 
     runlocal([[
         local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstChildOfClass("SurfaceGui")
