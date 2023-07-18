@@ -75,11 +75,12 @@ local function INIT()
         local TEXTBOX = Instance.new"TextBox"
         TEXTBOX.BackgroundColor3 = Color3.new(0.164705, 0.215686, 0.101960)
         TEXTBOX.BackgroundTransparency = 0.25
+        TEXTBOX.Visible = true
         TEXTBOX.Active = true
         TEXTBOX.BorderSizePixel = 0
         TEXTBOX.Size = UDim2.fromScale(1,0.03)
         TEXTBOX.AnchorPoint = Vector2.new(0,1)
-        TEXTBOX.Position = UDim2.fromScale(0,1.05)
+        TEXTBOX.Position = UDim2.fromScale(0,1.06)
         TEXTBOX.TextColor3 = Color3.new(0.19215686274509805, 0.49411764705882355, 0.34901960784313724)
         TEXTBOX.TextScaled = true
         TEXTBOX.Text = ""
