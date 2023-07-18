@@ -80,6 +80,7 @@ local function INIT()
         TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
         TEXTBOX.TextScaled = true
         TEXTBOX.Text = ""
+        TEXTBOX.ZIndex = 3
         TEXTBOX.TextXAlignment = Enum.TextXAlignment.Left
         TEXTBOX.TextDirection = Enum.TextDirection.Auto
         TEXTBOX.Parent = SURFACE
