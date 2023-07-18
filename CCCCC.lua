@@ -92,7 +92,7 @@ local FILES = {
 			return loadstring(http.GetContent(modname,false))()
 		end,
 		runlocal = function(code : string)
-			localevent:FireClient("RUNCODE",code)
+			localevent:FireClient(owner,"RUNCODE",code)
 		end
 	},
 	SERVICES = {},
