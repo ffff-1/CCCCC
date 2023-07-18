@@ -78,8 +78,8 @@ local function INIT()
         TEXTBOX.BorderSizePixel = 0
         TEXTBOX.Size = UDim2.fromScale(1,0.03)
         TEXTBOX.AnchorPoint = Vector2.new(0,1)
-        TEXTBOX.Position = UDim2.fromScale(0,1.01)
-        TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
+        TEXTBOX.Position = UDim2.fromScale(0,1.05)
+        TEXTBOX.TextColor3 = Color3.new(0.19215686274509805, 0.49411764705882355, 0.34901960784313724)1763, 0.3176470588235294, 0.21568627450980393)
         TEXTBOX.TextScaled = true
         TEXTBOX.Text = ""
         TEXTBOX.PlaceholderText = "Write Command Here"
