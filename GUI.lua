@@ -54,15 +54,17 @@ local function INIT()
     BACKGROUND.Parent = SURFACE
 
     local TEXT = Instance.new"TextLabel"
+    TEXT.BackgroundColor3 = Color3.new(0.164705, 0.215686, 0.101960)
     TEXT.BackgroundTransparency = 0.75
-    TEXT.Size = UDim2.fromScale(1,0.025)
+    TEXT.BorderSizePixel = 0
+    TEXT.Size = UDim2.fromScale(1,0.03)
     TEXT.AnchorPoint = Vector2.new(0,1)
     TEXT.Position = UDim2.fromScale(0,1)
     TEXT.TextColor3 = Color3.new(0.517647, 1, 0)
     TEXT.TextScaled = true
     TEXT.TextXAlignment = Enum.TextXAlignment.Left
     TEXT.TextDirection =Enum.TextDirection.Auto
-    TEXT.Text = "CCCCC:<}-> "
+    TEXT.Text = "CCCCC :<}-> "
     TEXT.Parent = SURFACE
 
     local divider = 2
