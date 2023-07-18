@@ -54,10 +54,10 @@ local function INIT()
     BACKGROUND.Parent = SURFACE
 
     local TEXT = Instance.new"TextLabel"
-    TEXT.BackgroundTransparency = true
-    TEXT.Size = UDim2.fromScale(1,0.015)
-    TEXT.AnchorPoint = Vector2.new(0,-1)
-    TEXT.Position = UDim2.new(0,1)
+    TEXT.BackgroundTransparency = 0.75
+    TEXT.Size = UDim2.fromScale(1,0.025)
+    TEXT.AnchorPoint = Vector2.new(0,1)
+    TEXT.Position = UDim2.fromScale(0,1)
     TEXT.TextColor3 = Color3.new(0.517647, 1, 0)
     TEXT.TextScaled = true
     TEXT.TextXAlignment = Enum.TextXAlignment.Left

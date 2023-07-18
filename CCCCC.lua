@@ -3,7 +3,7 @@ script:Destroy()
 
 if workspace:FindFirstChild("CCCCC") then workspace:FindFirstChild("CCCCC"):Destroy() end
 
-local mod = Instance.new("LocalScript",workspace)
+local mod = Instance.new("Script",workspace)
 mod.Name = "CCCCC"
 
 getfenv(0).script = mod
