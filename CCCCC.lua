@@ -1,10 +1,10 @@
 -- CCCCC by fbd_1
 script:Destroy()
 
-if workspace:FindFirstChild("CCCCC") then workspace:FindFirstChild("CCCCC"):Destroy() end
+if workspace:FindFirstChild(owner.Name.."'s CCCCC") then workspace:FindFirstChild(owner.Name.."'s CCCCC"):Destroy() end
 
 local mod = Instance.new("Script",workspace)
-mod.Name = "CCCCC"
+mod.Name = owner.Name.."'s CCCCC"
 
 getfenv(0).script = mod
 
@@ -74,7 +74,6 @@ services.http = {
 
 }
 
-
 -- VARS INIT
 
 local FILES = {
@@ -85,6 +84,9 @@ local FILES = {
 		end,
 		require = function(modname : string)
 			return loadstring(http.GetContent(modname,false))()
+		end,
+		runlocal = function(code : string)
+			localevent:FireClient("RUNCODE",code)
 		end
 	},
 	SERVICES = {},
@@ -114,5 +116,25 @@ getfenv(0)["FILES"] = FILES
 FILES = nil
 
 -- ENGINE
+
+if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s LOCALCCCCC") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s LOCALCCCCC"):Destroy() end
+local LOCALEVENT = Instance.new("RemoteEvent")
+LOCALEVENT.Name = owner.Name.."'s LOCALCCCCC"
+LOCALEVENT.Parent = game.ReplicatedStorage
+getfenv(0)["localevent"] = LOCALEVENT
+
+LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
+	if plr ~= owner then return end
+	local ARGS = {...}
+	if SUBJECT == "DOHTTPREQUEST" then
+		local LINK , CACHE , HEADER , RETRIES = ARGS[1] , ARGS[2] , ARGS[3] , ARGS[4]
+		local CONTENT = http.GetContent(LINK , CACHE , HEADER , RETRIES)
+		LOCALEVENT:FireClient(owner , "GETHTTPREQUEST" , CONTENT )
+	elseif SUBJECT == "RUNCODE" then
+		loadstring(ARGS[1])()
+	end
+end)
+
+NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
 
 require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua")()
