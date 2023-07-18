@@ -28,6 +28,10 @@ services = nil
 localevent.OnClientEvent:Connect(function(SUBJECT , ...)
     local args = {...}
     if SUBJECT == "RUNCODE" then
-        loadstring(args[1])()
+        local func = loadstring(args[1])
+        local sus , err = pcall(func)
+        if not sus then
+            print(err)
+        end
     end
 end)

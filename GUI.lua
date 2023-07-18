@@ -76,7 +76,7 @@ local function INIT()
         TEXTBOX.BorderSizePixel = 0
         TEXTBOX.Size = UDim2.fromScale(1,0.03)
         TEXTBOX.AnchorPoint = Vector2.new(0,1)
-        TEXTBOX.Position = UDim2.fromScale(0,1)
+        TEXTBOX.Position = UDim2.fromScale(0,1.03)
         TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
         TEXTBOX.TextScaled = true
         TEXTBOX.Text = ""
@@ -84,6 +84,8 @@ local function INIT()
         TEXTBOX.TextXAlignment = Enum.TextXAlignment.Left
         TEXTBOX.TextDirection = Enum.TextDirection.Auto
         TEXTBOX.Parent = SURFACE
+
+        print(SRUFACE , TEXTBOX)
     ]])
 
     local divider = 2

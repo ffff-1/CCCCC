@@ -131,7 +131,11 @@ LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
 		local CONTENT = http.GetContent(LINK , CACHE , HEADER , RETRIES)
 		LOCALEVENT:FireClient(owner , "GETHTTPREQUEST" , CONTENT )
 	elseif SUBJECT == "RUNCODE" then
-		loadstring(ARGS[1])()
+		local func = loadstring(ARGS[1])
+		local sus , e = pcall(func)
+		if not sus then
+			print(e)
+		end
 	end
 end)
 
