@@ -46,6 +46,8 @@ local function INIT()
     SURFACE.Brightness = 2
     SURFACE.PixelsPerStud = (32+16)*2
     SURFACE.Parent = PART
+    SURFACE.ClipsDescendants = false
+    SURFACE.ResetOnSpawn = false
 
     local BACKGROUND = Instance.new"Frame"
     BACKGROUND.BorderSizePixel = 0
@@ -66,7 +68,6 @@ local function INIT()
     TEXT.TextDirection =Enum.TextDirection.Auto
     TEXT.Text = "CCCCC :<}-> "
     TEXT.Parent = SURFACE
-    TEXT.ClipsDescendants = false
 
     runlocal([[
         local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstChildOfClass("SurfaceGui")
