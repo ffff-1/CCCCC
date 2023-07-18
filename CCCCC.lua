@@ -10,6 +10,12 @@ getfenv(0).script = mod
 
 -- SERVICES
 
+if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s LOCALCCCCC") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s LOCALCCCCC"):Destroy() end
+local LOCALEVENT = Instance.new("RemoteEvent")
+LOCALEVENT.Name = owner.Name.."'s LOCALCCCCC"
+LOCALEVENT.Parent = game.ReplicatedStorage
+getfenv(0)["localevent"] = LOCALEVENT
+
 local services = {}
 services.http = game:GetService"HttpService"
 services.http = {
@@ -116,12 +122,6 @@ getfenv(0)["FILES"] = FILES
 FILES = nil
 
 -- ENGINE
-
-if game.ReplicatedStorage:FindFirstChild(owner.Name.."'s LOCALCCCCC") then game.ReplicatedStorage:FindFirstChild(owner.Name.."'s LOCALCCCCC"):Destroy() end
-local LOCALEVENT = Instance.new("RemoteEvent")
-LOCALEVENT.Name = owner.Name.."'s LOCALCCCCC"
-LOCALEVENT.Parent = game.ReplicatedStorage
-getfenv(0)["localevent"] = LOCALEVENT
 
 LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
 	if plr ~= owner then return end
