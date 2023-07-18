@@ -31,7 +31,7 @@ localevent.OnClientEvent:Connect(function(SUBJECT , ...)
         local func = loadstring(args[1])
         local sus , err = pcall(func)
         if not sus then
-            print(err)
+            error(err)
         end
     end
 end)
