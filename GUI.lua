@@ -82,21 +82,21 @@ local function INIT()
     TEXTBOX.Text = ""
     TEXTBOX.Parent = SURFACE]]
 
-    NLS([[
-        script:Destroy()
+    runlocal([[
         local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstChildOfClass("SurfaceGui")
 
         local TEXTBOX = Instance.new"TextBox"
         TEXTBOX.BackgroundColor3 = Color3.new(0.164705, 0.215686, 0.101960)
-        TEXTBOX.BackgroundTransparency = 0.75
+        TEXTBOX.BackgroundTransparency = 0.25
         TEXTBOX.BorderSizePixel = 0
         TEXTBOX.Size = UDim2.fromScale(1,0.03)
-        TEXTBOX.AnchorPoint = Vector2.new(0,1.06)
-        TEXTBOX.Position = UDim2.fromScale(0,1)
+        TEXTBOX.AnchorPoint = Vector2.new(0,1)
+        TEXTBOX.Position = UDim2.fromScale(0,0.7)
         TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
         TEXTBOX.TextScaled = true
         TEXTBOX.TextXAlignment = Enum.TextXAlignment.Left
         TEXTBOX.Text = ""
+        TEXTBOX.ZIndex = 2
         TEXTBOX.Parent = SURFACE
         
     ]])
