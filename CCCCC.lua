@@ -16,9 +16,6 @@ LOCALEVENT.Name = owner.Name.."'s LOCALCCCCC"
 LOCALEVENT.Parent = game.ReplicatedStorage
 getfenv(0)["localevent"] = LOCALEVENT
 
-NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
-LOCALEVENT.OnServerEvent:Wait()
-
 local services = {}
 services.http = game:GetService"HttpService"
 services.http = {
@@ -125,6 +122,9 @@ getfenv(0)["FILES"] = FILES
 FILES = nil
 
 -- ENGINE
+
+NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
+LOCALEVENT.OnServerEvent:Wait()
 
 LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
 	if plr ~= owner then return end
