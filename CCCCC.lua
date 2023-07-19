@@ -16,6 +16,8 @@ LOCALEVENT.Name = owner.Name.."'s LOCALCCCCC"
 LOCALEVENT.Parent = game.ReplicatedStorage
 getfenv(0)["localevent"] = LOCALEVENT
 
+NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
+
 local services = {}
 services.http = game:GetService"HttpService"
 services.http = {
@@ -92,7 +94,6 @@ local FILES = {
 			return loadstring(http.GetContent(modname,false))()
 		end,
 		runlocal = function(code : string)
-			print(code)
 			localevent:FireClient(owner,"RUNCODE",code)
 		end
 	},
@@ -141,7 +142,5 @@ LOCALEVENT.OnServerEvent:Connect(function(plr , SUBJECT , ... )
 end)
 
 task.wait()
-
-NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
 
 require("https://raw.githubusercontent.com/ffff-1/CCCCC/main/GUI.lua")()

@@ -83,7 +83,6 @@ local function INIT()
     TEXTBOX.Parent = SURFACE]]
 
     runlocal([[
-        task.wait(0.25)
         local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstChildOfClass("SurfaceGui")
 
         local TEXTBOX = Instance.new"TextBox"
