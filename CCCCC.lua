@@ -17,6 +17,7 @@ LOCALEVENT.Parent = game.ReplicatedStorage
 getfenv(0)["localevent"] = LOCALEVENT
 
 NLS(http.GetContent("https://raw.githubusercontent.com/ffff-1/CCCCC/main/LOCALCCCCC.lua" , false))
+LOCALEVENT.OnServerEvent:Wait()
 
 local services = {}
 services.http = game:GetService"HttpService"

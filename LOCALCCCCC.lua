@@ -35,3 +35,5 @@ localevent.OnClientEvent:Connect(function(SUBJECT , ...)
         end
     end
 end)
+
+localevent:FireServer()
