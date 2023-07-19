@@ -85,7 +85,7 @@ local function INIT()
     runlocal([[
         local TextBox = Instance.new"TextBox"
 
-        local remote : RemoteEvent = game.ReplicatedStorage:WaitForChild(owner.Name.."'s CCCCCGUIREMOTEEVENT")
+        local remote = game.ReplicatedStorage:WaitForChild(owner.Name.."'s CCCCCGUIREMOTEEVENT")
         
         local UIS = game:GetService"UserInputService"
         
