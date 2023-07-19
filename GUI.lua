@@ -90,14 +90,14 @@ local function INIT()
         local UIS = game:GetService"UserInputService"
         
         UIS.InputBegan:Connect(function(k , g)
-            if g and k.UserInputType == Enum.UserInputType.Keyboard and k.KeyCode == Enum.KeyCode.Dollar then
+            if g and k.UserInputType == Enum.UserInputType.Keyboard and k.KeyCode == Enum.KeyCode.G then
                 TextBox:CaptureFocus()
             end
         end)
         
         TextBox.Changed:Connect(function(t)
             if t == "Text" then
-                remote:FireServer("APPLYTEXTCHANGE",TextBox.ContentText)
+                remote:FireServer("APPLYTEXTCHANGE",TextBox.Text)
             end
         end)
         
