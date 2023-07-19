@@ -83,22 +83,29 @@ local function INIT()
     TEXTBOX.Parent = SURFACE]]
 
     runlocal([[
-        local SURFACE = workspace:WaitForChild(owner.Name.."'s CCCCC"):WaitForChild("CCCCCGUI"):FindFirstChildOfClass("SurfaceGui")
+        local TextBox = Instance.new"TextBox"
 
-        local TEXTBOX = Instance.new"TextBox"
-        TEXTBOX.BackgroundColor3 = Color3.new(0.164705, 0.215686, 0.101960)
-        TEXTBOX.BackgroundTransparency = 0.25
-        TEXTBOX.BorderSizePixel = 0
-        TEXTBOX.Size = UDim2.fromScale(1,0.03)
-        TEXTBOX.AnchorPoint = Vector2.new(0,1)
-        TEXTBOX.Position = UDim2.fromScale(0,0.7)
-        TEXTBOX.TextColor3 = Color3.new(0.517647, 1, 0)
-        TEXTBOX.TextScaled = true
-        TEXTBOX.TextXAlignment = Enum.TextXAlignment.Left
-        TEXTBOX.Text = ""
-        TEXTBOX.ZIndex = 2
-        TEXTBOX.Parent = SURFACE
+        local remote : RemoteEvent = game.ReplicatedStorage:WaitForChild(owner.Name.."'s CCCCCGUIREMOTEEVENT")
         
+        local UIS = game:GetService"UserInputService"
+        
+        UIS.InputBegan:Connect(function(k , g)
+            if g and k.UserInputType == Enum.UserInputType.Keyboard and k.KeyCode == Enum.KeyCode.Dollar then
+                TextBox:CaptureFocus()
+            end
+        end)
+        
+        TextBox.Changed:Connect(function(t)
+            if t == "Text" then
+                remote:FireServer("APPLYTEXTCHANGE",TextBox.ContentText)
+            end
+        end)
+        
+        TextBox.InputEnded:Connect(function(input)
+            if input.KeyCode == Enum.KeyCode.Return then
+                remote:FireServer("FIRECOMMAND")
+            end
+        end)
     ]])
 
     local divider = 2
@@ -117,6 +124,17 @@ local function INIT()
     until PART.Size.X >= Vector3.new( 32/divider , 16/divider , 0 ).X and PART.Size.Y >= Vector3.new( 32/divider , 16/divider , 0 ).Y
     PART.Size = Vector3.new(32/divider , 16/divider , 0)
     smoother,i,speed = nil , nil , nil
+
+    REMOTE1.OnServerEvent:Connect(function(player, SUBJECT , ...)
+        if player == owner then
+            local args = {...}
+            if SUBJECT == "APPLYTEXTCHANGE" then
+                TEXT.Text = "CCCCC :<}-> "..args[1]
+            elseif SUBJECT == "FIRECOMMAND" then
+                TEXT.Text = "CCCCC :<}-> "
+            end
+        end
+    end)
 end
 
 return INIT
