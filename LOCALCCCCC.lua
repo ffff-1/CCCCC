@@ -37,3 +37,4 @@ localevent.OnClientEvent:Connect(function(SUBJECT , ...)
 end)
 
 localevent:FireServer()
+print("fired")
